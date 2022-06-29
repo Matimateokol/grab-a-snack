@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "grab-a-snack",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

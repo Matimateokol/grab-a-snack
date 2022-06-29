@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar color='burger'>
-    <ion-title>feed</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-slides [options]="catSlideOpts">
+    <ion-slide *ngFor="let cat of categories">
+      <img [src]="cat.img">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-slides [options]="highlightSlideOpts">
+    <ion-slide *ngFor="let h of highlights">
+      <img [src]="h.img">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-text color="dark"><b style="padding-left: 10px;">Featured</b></ion-text>
+
+  <ion-slides [options]="featuredSlideOpts">
+    <ion-slide *ngFor="let f of featured" class="featured-slide" routerLink="/details">
+      <img [src]="f.img">
+      <div class="info">
+        <ion-text color="dark"><b>{{f.name }}</b></ion-text>
+        <span>
+          <ion-icon name="star" color="secondary"></ion-icon>
+          <ion-text color="secondary"> {{ f.rating }} </ion-text>{{ f.ratings }}
+        </span>
+        <span>
+          <ion-icon name="location-outline"></ion-icon> {{ f.distance }}
+        </span>
+      </div>
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>

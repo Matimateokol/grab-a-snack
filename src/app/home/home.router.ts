@@ -15,14 +15,14 @@ const routes: Routes = [
           )
       },
       {
-        path: 'notifications',
+        path: 'orders',
         loadChildren: () =>
           import('../pages/notifications/notifications.module').then(
             m => m.NotificationsPageModule
           )
       },
       {
-        path: 'messages',
+        path: 'delivery',
         loadChildren: () =>
           import('../pages/messages/messages.module').then(
             m => m.MessagesPageModule
